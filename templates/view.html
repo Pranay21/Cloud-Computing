@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Python Flask Starter Application</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../static/stylesheets/style.css">
+  </head>
+
+  <body>
+  <div id="nav">
+          <h1> <span class = "blue">PYTHON FLASK APPLICATION</span> </h1>
+          <ul>
+      <li><a href="/">Upload</a></li>
+      <li><a href="/view/">View Files</a></li>
+  </ul>
+      </div>
+            <h1 align="center">LIST OF UPLOADED FILES</h1>
+			<table class="table table-striped">
+			<tr>
+			<th>File Name</th>
+			<th>Version Number</th>
+			<th>Last Modified</th>
+			<th></th>
+			</tr>
+			{% for document in documents %}
+				<tr>
+					<td>{{document['file_name']}}</td>
+					<td>{{document['version_number']}}</td>
+					<td>{{document['lastModifiedDate']}}</td>
+					<td>
+						<p><a href='/download/{{document['_id']}}/'> Download </a></p>
+                    </td>
+                    <td>
+						<p><a href='/delete/{{document['_id']}}/'> Delete </a></p>
+						</td>
+				</tr>
+			{% endfor %}
+			</table>
+    </div>
+  </body>
+
+</html>

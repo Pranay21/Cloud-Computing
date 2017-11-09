@@ -1,0 +1,11 @@
+applications:
+- path: .
+  memory: 128M
+  instances: 1
+  domain: mybluemix.net
+  name: sxa0453cloud
+  host: sxa0453cloud
+  disk_quota: 1024M
+  services:
+  - Cloudant NoSQL DB-ok
+  buildpack: python_buildpack
